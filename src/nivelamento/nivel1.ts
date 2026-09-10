@@ -20,15 +20,3 @@ function verificarIdade(usuarioAtual: usuario){
 
 verificarIdade(jogador);
 verificarIdade(jogadorVelho);
-
-type veiculo = {'modelo':string, 'ano':number };
-let carroVelho:veiculo = {modelo: 'Palio', ano:2004};
-let carroNovo: veiculo = {modelo: 'Kicks', ano:2026};
-
-function verificarCarro(veiculo){
-    if(verificarCarro.modelo){
-        console.log(`Você selecionou o ${carroVelho}`);
-        }
-    }
-
-verificarCarro();
