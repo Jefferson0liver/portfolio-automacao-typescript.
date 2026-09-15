@@ -6,15 +6,15 @@ const sobreNome:string = 'Oliveira'; // forma 3 (sintaxe do typescript)
 
 type usuario = {'nick':string, 'age':number }; // tipagem especial
 
-let jogador:usuario = {nick: 'Jefferson', age:18};
+let jogador:usuario = {nick: 'Jefferson', age:16};
 
 let jogadorVelho:usuario = {nick: 'Toin', age:76};
 
 function verificarIdade(usuarioAtual: usuario){
     if (usuarioAtual.age >= 21) {
-        console.log(`Acesso liberado: o jogador ${usuarioAtual.nick} tem ${usuarioAtual.age} anos.`);
+        console.log(`Acesso liberado: o jogador ${usuarioAtual.nick} tem ${usuarioAtual.age} anos. ✅`);
     } else{
-        console.log(`${usuarioAtual.nick} não pode acessar, idade ${usuarioAtual.age} anos não permitida!`);
+        console.log(`${usuarioAtual.nick} não pode acessar, idade ${usuarioAtual.age} anos não permitida! ⛔`);
     }
 };
 
