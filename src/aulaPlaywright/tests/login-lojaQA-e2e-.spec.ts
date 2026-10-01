@@ -27,4 +27,24 @@ test.describe('ATO 2 - Caminho Feliz', ()=>{
         await page.click('#loginBtn');  //ação de clique no btn
         await expect(page).toHaveURL(/painel\.html/);  //validar o redirecionamento para a página/painel
     });
+
+    test('Verificar botão de login desativado quando email incorreto', async({page}) => {   //testar com email errado
+        await page.goto(`${BASE_URL}/login.html`);
+        await page.fill('#email', 'nulo.nulo@hotmail.com');
+        await page.fill('#password', '123456--');
+        await expect(page.locator('#loginBtn')).toBeDisabled();
+    });
+});
+
+test.describe('ATO 3 criar usuários e validar cadastro e login', async () => {   //atividade da sala 
+    test('Criar usuários de cliente e lojista', async ({page}) => {
+      await page.goto(`${BASE_URL}/login.html`);
+      await expect (page.getByRole('Criar conta')).toBeEnabled();
+      await page.getByRole('Criar conta');
+      await expect(page).toHaveURL(/criar-conta\.html/);
+      await page.fill('#nome', 'Jefferson Aragão');
+      await page.fill('#email', 'jeff.aragao@hotmail.com');
+      await page.fill('#password', '123456--');
+      await page.click('#registerBtn');
+    });
 });
