@@ -1,7 +1,7 @@
 // importando função utilitária de aguardar tempo(delay)
 import { aguardar } from "../../utils/helpers";
 
-function simularLogin (usuario:string, senha:string):Promise<string>{    //SIMULANDO UMA API DE LOGIN
+function simularLogin (usuario:string, senha:string):Promise<string> {    //SIMULANDO UMA API DE LOGIN
     return new Promise((resolve,reject) => {
         if(usuario ==='admin' && senha ==='123456'){
             resolve('token-secreto-aprovado-123');
